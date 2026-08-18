@@ -2,7 +2,7 @@
 | Basic Info | --- |
 | --- | ---|
 | Course: | CSCI130 - CS130: Intro to Engineering Computer Science |
-| Semester: | Spring 2025 |
+| Semester: | Fall 2026 |
 | Instructor: | Corin Chepko |
 | Mav Username: | slcourtright |
 | GitHub Username: | slcourtright |
