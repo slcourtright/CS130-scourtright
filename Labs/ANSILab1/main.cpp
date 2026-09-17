@@ -63,7 +63,7 @@ int main()
     getline(cin, semester);
 
     const string mountainA_1 = "     /\\      ";
-    const string mountainB_1 = "           /\\  /\\     ";
+    const string mountainB_1 = "          /\\  /\\     ";
     const string mountainA_2 = "    /  \\    /\\";
     const string mountainB_2 = "   /\\    /  \\/  \\ /\\";
     string asterics = string(middleWidth, '*'); // create a string with 50 asterics
@@ -84,25 +84,35 @@ int main()
     // Print the 2nd line
     cout << mountainALine2 << '*' << infoLine2 <<  '*' << mountainBLine2 << endl;
 
-
-
-   
-    string mountainA_3 = "   /    \\  /  \\";
-    string mountainA_4 = "  /      \\     \\";
-    string mountainA_5 = " /        \\     \\";
-
-    
-    
-    string mountainB_3 = "  /  \\  /    \\   \\  \\";
-    string mountainB_4 = " /    \\/      \\   \\  \\";
-    string mountainB_5 = "/      /        \\   \\  \\";
-
     //FIXME5: Create and print the 3rd line of the ASCII art
+    string mountainA_3 = "    /    \\  /  \\";
+    string mountainB_3 = "  /  \\  /    \\   \\  \\";
+    string mountainALine3 = centerText(mountainAWidth, mountainA_3);
+    string mountainBLine3 = centerText(mountainBWidth, mountainB_3);
+    string infoLine3 = centerText(middleWidth-2, name);
+
+    cout << mountainALine3 << '*' << infoLine3 << '*' << mountainBLine3 << endl;
+
     //FIXME6: Create and print the 4th line of the ASCII art
+    string mountainA_4 = "    /      \\     \\";
+    string mountainB_4 = " /    \\/      \\   \\  \\";
+    string mountainALine4 = centerText(mountainAWidth, mountainA_4);
+    string mountainBLine4 = centerText(mountainBWidth, mountainB_4);
+    string infoLine4 = centerText(middleWidth-2, semester);
+
+    cout << mountainALine4 << '*' << infoLine4 << '*' << mountainBLine4 << endl;
+
     //FIXME7: Create and print the 5th line of the ASCII art
+    string mountainA_5 = "    /        \\     \\";
+    string mountainB_5 = "/     /        \\   \\  \\";
+    string mountainALine5 = centerText(mountainAWidth, mountainA_5);
+    string mountainBLine5 = centerText(mountainBWidth, mountainB_5);
+    string infoLine5 = centerText(middleWidth-2, course);
+
+    cout <<mountainALine5 << '*' << infoLine5 << '*' << mountainBLine5 << endl;
 
     //Note: You can add more lines or print more ASCII arts of your choice ... if you'd like to...
-
+    cout << centerText(100, infoLine1) << endl;
     cout << "\nGood bye... hit enter to exit the program.\n";
     //FIXME8: make the console wait for user input
 
