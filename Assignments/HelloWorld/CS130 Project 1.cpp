@@ -143,7 +143,7 @@ double HETotal(double HEcontents, double HEicemelt)
 
 double tempFinal (double kgOfIce, double degC, double kgOfCans, double tempOfCans, double airkg)
 {
-    double tempfinal = (kgOfIce * waterHeatCapacity * degC + kgOfCans * airHeatCapacity * 100) / (kgOfice * waterHeatCapacity + kgOfCans * waterHeatCapacity + airkg * airHeatCapacity);
+    double tempfinal = (kgOfIce * waterHeatCapacity * degC + kgOfCans * airHeatCapacity * 100) / (kgOfIce * waterHeatCapacity + kgOfCans * waterHeatCapacity + airkg * airHeatCapacity);
 
     return tempfinal;
 }
@@ -169,7 +169,7 @@ int main()
             cout << "Enter the volume of cooler in quarts:";
             cin >> quarts;
             
-            cout << "The volume of the cooler in meters cubed is:" << quarts_to_m3(quarts) << endl;
+            cout << "The volume of the cooler in cubic meters is:" << quarts_to_m3(quarts) << endl;
             m3 = quarts_to_m3(quarts);
             valid = true;
         }
@@ -178,7 +178,7 @@ int main()
             cout << "Enter the volume of cooler in liters:";
             cin >> liters;
 
-            cout << "The volume of the cooler in meters cubed is:" << liters_to_m3(liters) << endl;
+            cout << "The volume of the cooler in cubic meters is:" << liters_to_m3(liters) << endl;
             m3 = liters_to_m3(liters);
             valid = true;
         }
@@ -187,7 +187,7 @@ int main()
             cout << "Enter the volume of cooler in inches cubed:";
             cin >> in3;
 
-            cout << "The volume of the cooler in meters cubed is:" << in3_to_m3(in3) << endl;
+            cout << "The volume of the cooler in cubic meters is:" << in3_to_m3(in3) << endl;
             m3 = in3_to_m3(in3);
             valid = true;
         }
@@ -235,7 +235,7 @@ int main()
             iceValid = true;
             kgOfIce = lbsice_to_kg(poundsOfIce);
 
-            cout << kgOfIce << endl;
+           // cout << kgOfIce << endl;
         }
         else
         {
@@ -245,7 +245,7 @@ int main()
     } while(iceValid == false);
     
     m3ice = kgice_to_m3(kgOfIce);
-    cout << m3ice << endl;
+    //cout << m3ice << endl;
 
     do
     {
@@ -266,7 +266,7 @@ int main()
     {
         cout << "Do you wish to enter can temperature if Fahrenheit (F) or Celsiuis (C)?";
         cin >> canUnit;
-        cout << "Enter temperature of cans";
+        cout << "Enter temperature of cans:";
         cin >> tempOfCans;
 
         if(canUnit == "F" || canUnit == "f")
@@ -299,17 +299,17 @@ int main()
     if (remainingVolume = 0)
     {
         cout << "There is no space left in the cooler. Goodbye!" << endl;
-        exit();
+        //exit();
     }
     else if (remainingVolume < 0)
     {
         cout << "There is not enough space in the cooler for all contents. Goodbye!" << endl;
-        exit();
+        //exit();
     }
 
     /* Compute mass of air in kg */
     airkg = m3air_to_kg(remainingVolume);
-    cout << airkg << endl;
+    //cout << airkg << endl;
 
     /* Compute the change in heat energy to warm the ice to 0 C.
     Change in heat energy to warm ice = mass of icee * heat capacity of ice (0 C - Temperature of Ice)*/
@@ -330,6 +330,7 @@ int main()
     /*Compute the total
     Change in heat energy total = change in heat energy of contents - heat energy ice to water*/
     HEtotal = HETotal(HEcontents, HEicemelt);
+    cout << HEtotal << endl;
 
     if (HEtotal < 0)
     {
@@ -341,8 +342,5 @@ int main()
 
         cout << "The ice has melted, the final temperature is " << tempfinal << "." << endl;
     }
-
-
-    
 
 }
