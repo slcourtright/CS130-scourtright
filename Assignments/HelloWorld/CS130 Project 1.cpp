@@ -11,7 +11,7 @@ const double oz_m3 = .0000295735;
 const double m3_in3 = 61023.7;
 const double lb_kg = 0.453592;
 const double iceDensity = 916.8; //kg/m^3
-const double waterDensity = 1; //L/kg
+const double waterDensity = 1000.0; // kg/m^3
 const double canDensity = 1000; //kg/m^3
 const double airDensity = 1.135; //at 100F, kg/m^3
 const double iceHeatCapacity = 2100; //J/(kg K)
@@ -147,18 +147,11 @@ double tempFinal (double kgOfIce, double degC, double kgOfCans, double tempOfCan
 
     return tempfinal;
 }
-
-
-int main()
+void volumeInput(double &m3)
 {
-    string measurement, tempUnit, canUnit;
-    double quarts, liters, in3, poundsOfIce, degF, degC, m3, m3ice, kgOfIce, airkg, HEicewarm, HEicemelt, HEiceto0, HEcontents, kgOfCans, tempOfCans, HEtotal, tempfinal;
-    bool valid = false; 
-    bool iceValid = false;
-    bool tempValid = false;
-    bool cansValid = false;
-    bool tempOfCansValid = false;
-    int cans;
+    string measurement;
+    double quarts, liters, in3;
+    bool valid = false;
     do
     {
         cout << "Enter the desired measurement, quarts (q), liters(l), or cubic inches (in3):"; 
@@ -196,6 +189,12 @@ int main()
             cout << "Invalid measurement type." << endl;
         }
     } while (valid == false);
+}
+void coolerTemp(double &degC)
+{
+    string tempUnit;
+    double degF;
+    bool tempValid = false;
 
     do
     {
@@ -224,8 +223,13 @@ int main()
             cout << "Invalid measurement type." << endl;
         }
     } while (tempValid == false);
+}
+void kgIce(double &kgOfIce)
+{
+    double poundsOfIce;
+    bool iceValid = false;
 
-    do
+     do
     {
         cout << "Input ice amount in pounds:";
         cin >> poundsOfIce;
@@ -243,26 +247,31 @@ int main()
     
         }
     } while(iceValid == false);
-    
-    m3ice = kgice_to_m3(kgOfIce);
-    //cout << m3ice << endl;
+}
 
+void numberOfCanInput(int &cans)
+{
+    bool cansValid = false;
     do
-    {
-        cout << "Input number of cans you wish to cool:";
-        cin >> cans;
-
-        if(cans > 0)
         {
-            cansValid = true;
-        }
-        else
-        {
-            cout << "Invalid input." << endl;
-        }
-    } while(cansValid == false);
+            cout << "Input number of cans you wish to cool:";
+            cin >> cans;
 
-    do
+            if(cans > 0)
+            {
+                cansValid = true;
+            }
+            else
+            {
+                cout << "Invalid input." << endl;
+            }
+        } while(cansValid == false);
+}
+ void tempOfCanInput(double &tempOfCans)
+ {
+    string canUnit;
+    bool tempOfCansValid = false;
+     do
     {
         cout << "Do you wish to enter can temperature if Fahrenheit (F) or Celsiuis (C)?";
         cin >> canUnit;
@@ -285,6 +294,31 @@ int main()
             cout << "Invalid Input." << endl;
         }
     } while(tempOfCansValid == false);
+ }
+    
+
+
+string canUnit;
+double degC, m3, m3ice, kgOfIce, airkg, HEicewarm, HEicemelt, HEiceto0, HEcontents, kgOfCans, tempOfCans, HEtotal, tempfinal;
+
+int cans;
+    
+int main()
+{
+    volumeInput(m3);
+
+    coolerTemp(degC);
+
+    kgIce(kgOfIce);
+
+    m3ice = kgice_to_m3(kgOfIce);
+    //cout << m3ice << endl;    
+
+    numberOfCanInput(cans);
+   
+    tempOfCanInput(tempOfCans);
+
+   
     
 
 
@@ -295,8 +329,9 @@ int main()
     if total volume <= 0 tell user, exit
     else continue */
     double remainingVolume = m3 - kgice_to_m3(kgOfIce) - ozcans_to_m3(cans);
+    kgOfCans = m3cans_to_kg(ozcans_to_m3(cans));
     
-    if (remainingVolume = 0)
+    if (remainingVolume == 0)
     {
         cout << "There is no space left in the cooler. Goodbye!" << endl;
         //exit();
@@ -329,7 +364,7 @@ int main()
 
     /*Compute the total
     Change in heat energy total = change in heat energy of contents - heat energy ice to water*/
-    HEtotal = HETotal(HEcontents, HEicemelt);
+    HEtotal = HEcontents - HEiceto0;
     cout << HEtotal << endl;
 
     if (HEtotal < 0)
