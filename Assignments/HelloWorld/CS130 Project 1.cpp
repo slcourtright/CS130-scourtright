@@ -1,5 +1,7 @@
 /*
-
+Sam Courtright
+10/27/2026
+This program calculates the Heat Energy required for a cooler.
 */
 
 #include <iostream>
@@ -415,5 +417,3 @@ void tempOfCanInput(double &tempOfCans) //Validates input of temperature of cans
         }
     } while(tempOfCansValid == false);
  }
-
-
