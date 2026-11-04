@@ -12,12 +12,12 @@ ________________________________________________________________________________
 ## Homework #1
 | Name | Value |
 | --- | --- |
-| Name: | FIXME |
-| Description: | FIXME |
-| Due Date: | FIXME |
-| Status: | FIXME (In Progress, Finished, Not Started, etc...) |
-| Location: | <provide GitHub link to assignment> |
-| Notes: | In Progress|
+| Name: | CS130 Project 1 |
+| Description: | This program calculates the Heat Energy required for a cooler. |
+| Due Date: | 10/23/2026 |
+| Status: | Finished |
+| Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/HelloWorld/CS130%20Project%201.cpp |
+| Notes: | No Prob Bob |
 _______________________________________________________________________________________________________________
 # Labs
 ## Lab #1
