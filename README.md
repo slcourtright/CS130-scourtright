@@ -25,7 +25,7 @@ ________________________________________________________________________________
 | Description: | Projectile Motion |
 | Due Date: | 11/06/2026 |
 | Status: | Finished |
-| Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/HelloWorld/CS130%20Project%201.cpp |
+| Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/Matlab%20Homeqork%201.m |
 | Notes: |  |
 _______________________________________________________________________________________________________________
 # Labs
