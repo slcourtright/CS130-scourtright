@@ -18,6 +18,15 @@ ________________________________________________________________________________
 | Status: | Finished |
 | Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/HelloWorld/CS130%20Project%201.cpp |
 | Notes: | No Prob Bob |
+## Homework #1
+| Name | Value |
+| --- | --- |
+| Name: | Matlab HW 1 |
+| Description: | Projectile Motion |
+| Due Date: | 11/06/2026 |
+| Status: | Finished |
+| Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/HelloWorld/CS130%20Project%201.cpp |
+| Notes: |  |
 _______________________________________________________________________________________________________________
 # Labs
 ## Lab #1
