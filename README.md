@@ -16,7 +16,7 @@ ________________________________________________________________________________
 | Description: | This program calculates the Heat Energy required for a cooler. |
 | Due Date: | 10/23/2026 |
 | Status: | Finished |
-| Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/HelloWorld/CS130%20Project%201.cpp |
+| Location: | https://github.com/slcourtright/CS130-scourtright/blob/main/Assignments/Cooler%20Project/CS130%20Project%201.cpp |
 | Notes: | No Prob Bob |
 ## Homework #1
 | Name | Value |
